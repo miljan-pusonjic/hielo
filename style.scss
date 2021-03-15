@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap');
+/****************************
+variables
+****************************/
+$white: #ffffff;
+$background: #dbdbdb;
+$lightGray: #d9d9d9;
+$font: #3a3a3a;
+$padding: 100px 0;
+$transition: .4s ease;
+/****************************
+mixins
+****************************/
+@mixin line ($boja, $sirina) {
+    display: block;
+    content: "";
+    border: none;
+    height: 1px;
+    width: $sirina;
+    background: $boja;
+    margin: 20px auto 0;
+}
+@mixin flex ($justify, $align, $direction) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+@mixin btn {
+    margin-top: 30px;
+    border: 2px solid #c6c6c6; 
+    background: none;
+    color: $font;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    &:hover {
+        border: 2px solid $font;
+        transition: $transition;
+    }
+}
+/****************************
+basic styles
+****************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background: $background;
+    color: $font;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+/****************************
+header
+****************************/
+header {
+    background-image:linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    @include flex(center, center, column);
+    @media (max-width: 767px) {
+        text-align: center;
+    }
+    h3 {
+        text-transform: uppercase;
+        font-weight: 400;
+        color: $lightGray;
+        @media (max-width: 767px) {
+            font-size: 2rem;
+        }
+        &::after {
+            @include line($lightGray, 80%);
+            @media (max-width: 767px) {
+                @include line($lightGray, 50%);
+            }
+        }
+    }
+    h1 {
+        font-size: 7rem;
+        font-weight: 400;
+        letter-spacing: 5px;
+        color: $white;
+        @media (max-width: 767px) {
+            font-size: 4rem;
+        }
+    }
+}
+/****************************
+blog
+****************************/
+.blog {
+    padding: $padding;
+    @extend .container;
+    @include flex(space-between, center, row);
+    article {
+        flex: 0 0 48%;
+        background: $white;
+        text-align: center;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+            margin-bottom: 30px;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+        div {
+            padding: 50px;
+            h4 {
+                color: $lightGray;
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: .8rem;
+                &::after {
+                    @include line($lightGray, 30%);
+                }
+            }
+            h2 {
+                padding: 20px 0;
+                font-weight: 400;
+            }
+            p {
+                color: $lightGray;
+                line-height: 1;
+                font-size: .9rem;
+            }
+            button {
+                @include btn;
+            }
+        }
+    }
+}
+/****************************
+headGallery
+****************************/
+.headGallery {
+    padding: $padding;
+    background-image:linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    color: $white;
+    text-align: center;
+    h6 {
+        font-size: 1rem;
+        font-weight: 400;
+        opacity: .8;
+        text-transform: uppercase;
+        &::after {
+            @include line($white, 30%)
+        }
+    }
+    h5 {
+        font-size: 2rem;
+        font-weight: 400;
+        margin-top: 20px;
+    }
+}
+/****************************
+gallery
+****************************/
+.gallery {
+    @extend .container, .headGallery;
+    background: none;
+    color: $font;
+    h6 {
+        letter-spacing: 2px;
+        &::after {
+            display: none;
+        }
+    }
+    h5 {
+        font-size: 1.8rem;
+    }
+    article {
+        margin-top: 20px;
+        @include flex(space-between, center, row);
+       div {
+        flex: 0 0 48%;
+        border: 20px solid $white;
+        margin-top: 30px;
+        transition: $transition;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+            }
+            img {
+                width: 100%;
+                display: block;
+            }
+            &:hover {
+                transform: scale(1.1);
+                transition: $transition;
+            }
+        }
+    }
+}

@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap");
+/****************************
+variables
+****************************/
+/****************************
+mixins
+****************************/
+/****************************
+basic styles
+****************************/
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  background: #dbdbdb;
+  color: #3a3a3a;
+}
+
+.container, .blog, .gallery {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/****************************
+header
+****************************/
+header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(img/header.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/header.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  header {
+    text-align: center;
+  }
+}
+
+header h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #d9d9d9;
+}
+
+@media (max-width: 767px) {
+  header h3 {
+    font-size: 2rem;
+  }
+}
+
+header h3::after {
+  display: block;
+  content: "";
+  border: none;
+  height: 1px;
+  width: 80%;
+  background: #d9d9d9;
+  margin: 20px auto 0;
+}
+
+@media (max-width: 767px) {
+  header h3::after {
+    display: block;
+    content: "";
+    border: none;
+    height: 1px;
+    width: 50%;
+    background: #d9d9d9;
+    margin: 20px auto 0;
+  }
+}
+
+header h1 {
+  font-size: 7rem;
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  header h1 {
+    font-size: 4rem;
+  }
+}
+
+/****************************
+blog
+****************************/
+.blog {
+  padding: 100px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.blog article {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  background: #ffffff;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .blog article {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.blog article img {
+  width: 100%;
+  display: block;
+}
+
+.blog article div {
+  padding: 50px;
+}
+
+.blog article div h4 {
+  color: #d9d9d9;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: .8rem;
+}
+
+.blog article div h4::after {
+  display: block;
+  content: "";
+  border: none;
+  height: 1px;
+  width: 30%;
+  background: #d9d9d9;
+  margin: 20px auto 0;
+}
+
+.blog article div h2 {
+  padding: 20px 0;
+  font-weight: 400;
+}
+
+.blog article div p {
+  color: #d9d9d9;
+  line-height: 1;
+  font-size: .9rem;
+}
+
+.blog article div button {
+  margin-top: 30px;
+  border: 2px solid #c6c6c6;
+  background: none;
+  color: #3a3a3a;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.blog article div button:hover {
+  border: 2px solid #3a3a3a;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+/****************************
+headGallery
+****************************/
+.headGallery, .gallery {
+  padding: 100px 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(img/header.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/header.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+}
+
+.headGallery h6, .gallery h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: .8;
+  text-transform: uppercase;
+}
+
+.headGallery h6::after, .gallery h6::after {
+  display: block;
+  content: "";
+  border: none;
+  height: 1px;
+  width: 30%;
+  background: #ffffff;
+  margin: 20px auto 0;
+}
+
+.headGallery h5, .gallery h5 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+/****************************
+gallery
+****************************/
+.gallery {
+  background: none;
+  color: #3a3a3a;
+}
+
+.gallery h6 {
+  letter-spacing: 2px;
+}
+
+.gallery h6::after {
+  display: none;
+}
+
+.gallery h5 {
+  font-size: 1.8rem;
+}
+
+.gallery article {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.gallery article div {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  border: 20px solid #ffffff;
+  margin-top: 30px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+@media (max-width: 767px) {
+  .gallery article div {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
+.gallery article div img {
+  width: 100%;
+  display: block;
+}
+
+.gallery article div:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+/*# sourceMappingURL=style.css.map */
